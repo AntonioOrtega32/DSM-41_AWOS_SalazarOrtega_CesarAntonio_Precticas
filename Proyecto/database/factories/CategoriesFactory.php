@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CategoriesFactory extends Factory
@@ -11,10 +12,13 @@ class CategoriesFactory extends Factory
      *
      * @return array
      */
+
+    protected $model = Category::class;
     public function definition()
     {
         return [
             //
+            'name' => $this->faker->name(),
         ];
     }
 }

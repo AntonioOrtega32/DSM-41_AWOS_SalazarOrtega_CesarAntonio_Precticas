@@ -15,7 +15,13 @@ class CreateDetailsTable extends Migration
     {
         Schema::create('details', function (Blueprint $table) {
             $table->id();
+            $table->string('cantidad');
+            $table->string('precio');
+            $table->string('name');
             $table->timestamps();
+            //foraneas
+            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('pedido_id')->references('id')->on('pedido');
         });
     }
 
